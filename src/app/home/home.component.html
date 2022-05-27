@@ -1,0 +1,71 @@
+<!-- Contact ============================================= -->
+<section id="contact" class="section bg-dark-1">
+    <div class="container">
+        <!-- Heading -->
+        <div class="row mb-5">
+            <div class="col-lg-9 col-xl-8 mx-auto text-center">
+                <h2 class="fw-600 text-white mb-3">Contact Us</h2>
+                <hr class="heading-separator-line bg-primary opacity-10 mx-auto">
+                <p class="text-4 text-white-50">Send me a note, and let’s get started on your project today!</p>
+            </div>
+        </div>
+        <!-- Heading End -->
+
+        <!-- Contact Form -->
+        <div class="row">
+            <div class="col-lg-10 col-xl-9 mx-auto">
+                <form class="form-dark">
+                    <div class="row g-4">
+                        <div class="col-md-6">
+                            <input name="name" type="text" class="form-control bg-transparent border-2 border-secondary"
+                                required placeholder="Your Name" [(ngModel)]="name">
+                        </div>
+                        <div class="col-md-6">
+                            <input name="email" type="email"
+                                class="form-control bg-transparent border-2 border-secondary" required
+                                placeholder="Your Email" [(ngModel)]="email">
+                        </div>
+                        <div class="col-md-12">
+                            <textarea name="message" class="form-control bg-transparent border-2 border-secondary"
+                                rows="5" required placeholder="Tell us more about your needs........" [(ngModel)]="message"></textarea>
+                        </div>
+                        <div class="col-md-12 text-center">
+                            <button class="btn btn-primary rounded-pill d-inline-flex" (click)="test()">Send
+                                Message</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <!-- Contact Form End -->
+
+        <div class="brands-grid separator-border separator-border-light h-100 mt-5">
+            <div class="row">
+                <div class="col-md-6 col-lg-4">
+                    <div class="featured-box text-center my-3 my-md-0">
+                        <div class="featured-box-icon text-muted"> <i class="fas fa-map-marker-alt"></i></div>
+                        <h3 class="text-uppercase text-white">Visit Us</h3>
+                        <p class="text-white-50 mb-0">313 Spaliul Independetei<br>
+                            Bucharest, Romania 060042</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="featured-box text-center my-3 my-md-0">
+                        <div class="featured-box-icon text-muted"> <i class="fas fa-phone-alt"></i> </div>
+                        <h3 class="text-uppercase text-white">Call Us Now</h3>
+                        <p class="text-white-50 mb-0">Phone: +40 761 745 557<br>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="featured-box text-center my-3 my-md-0">
+                          <div class="featured-box-icon text-muted"> <i class="fas fa-envelope"></i> </div>
+                        <h3 class="text-uppercase text-white">Inquiries</h3>
+                        <p class="text-white-50 mb-0"><a class="text-white-50"
+                                href="mailto:weddinglab@gmail.com">weddinglab@gmail.com</a><br></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Contact end -->

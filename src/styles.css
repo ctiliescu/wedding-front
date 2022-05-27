@@ -1,1 +1,8 @@
 /* You can add global styles to this file, and also import other style files */
+
+@import url('~assets/vendor/animate/animate.min.css');
+@import url('~assets/vendor/bootstrap/css/bootstrap.min.css');
+@import url('~assets/vendor/font-awesome/css/all.min.css');
+@import url('~assets/vendor/owl.carousel/assets/owl.carousel.min.css');
+@import url('~assets/vendor/magnific-popup/magnific-popup.min.css');
+@import url('~assets/css/stylesheet.css');

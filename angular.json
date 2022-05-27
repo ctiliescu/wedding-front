@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "ianus-front": {
+    "wedding-front": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:application": {
@@ -17,7 +17,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/ianus-front",
+            "outputPath": "dist/wedding-front",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -29,7 +29,31 @@
             "styles": [
               "src/styles.css"
             ],
-            "scripts": []
+            "scripts": [
+              "src/assets/vendor/jquery/jquery.min.js",
+              "src/assets/vendor/bootstrap/js/bootstrap.bundle.min.js",
+              "src/assets/vendor/jquery.easing/jquery.easing.min.js",
+              "src/assets/vendor/jquery.appear/jquery.appear.min.js",
+              "src/assets/vendor/imagesloaded/imagesloaded.pkgd.min.js",
+              "src/assets/vendor/jquery.countTo/jquery.countTo.min.js",
+              "src/assets/vendor/parallaxie/parallaxie.min.js",
+              "src/assets/vendor/typed/typed.min.js",
+              "src/assets/vendor/owl.carousel/owl.carousel.min.js",
+              "src/assets/vendor/isotope/isotope.pkgd.min.js",
+              "src/assets/vendor/magnific-popup/jquery.magnific-popup.min.js",
+              {
+                "input": "src/assets/vendor/particles/particles.min.js",
+            
+                "bundleName": "lazy-loaded-script"
+              },
+              {
+                "input":  "src/assets/vendor/particles/particles.app.js",
+          
+                "bundleName": "lazy-loaded-script"
+              },
+             
+              "src/assets/js/theme.js"
+            ]
           },
           "configurations": {
             "production": {
@@ -68,10 +92,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "ianus-front:build:production"
+              "browserTarget": "wedding-front:build:production"
             },
             "development": {
-              "browserTarget": "ianus-front:build:development"
+              "browserTarget": "wedding-front:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -79,7 +103,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "ianus-front:build"
+            "browserTarget": "wedding-front:build"
           }
         },
         "test": {
@@ -102,5 +126,5 @@
       }
     }
   },
-  "defaultProject": "ianus-front"
+  "defaultProject": "wedding-front"
 }
