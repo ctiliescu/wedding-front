@@ -3715,3 +3715,11 @@ input:-internal-autofill-selected {
   left: -40px;
   border-radius: 4px 0px 0px 4px;
 }
+
+
+.show-img {
+	background-image: url("../images/us.jpeg");
+  	background-repeat: no-repeat;
+  	background-size: cover;
+  	background-position: center;
+}

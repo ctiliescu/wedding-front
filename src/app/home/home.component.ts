@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { ThrowStmt } from '@angular/compiler';
+import { IdentityService } from '../services/identity.service';
 
 @Component({
   selector: 'app-home',
@@ -9,18 +9,19 @@ import { ThrowStmt } from '@angular/compiler';
 })
 export class HomeComponent implements OnInit {
 
-  constructor(private http: HttpClient) { }
+
+  constructor(private http: HttpClient, private identity: IdentityService) { }
 
   name: string = '';
   email: string = '';
   message: string = '';
 
-  ngOnInit(): void {
+  ngOnInit() {
   }
 
   test(): void {
-    this.http.post<any>('https://weddinglab-go-backend-cristian-iliescu.vercel.app/api/index.go', JSON.stringify({ name: this.name, message: this.message, email: this.email})).subscribe(data => {    
-    })
+    // this.http.post<any>('https://weddinglab-go-backend-cristian-iliescu.vercel.app/api/index.go', JSON.stringify({ name: this.name, message: this.message, email: this.email})).subscribe(data => {    
+    // })
   }
 
 }
