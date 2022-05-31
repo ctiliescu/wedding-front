@@ -9,6 +9,7 @@ export class IdentityService {
 
   jwt: string;
   names: string[] = [];
+  nameToString: string = "";
 
   constructor(private http: HttpClient, private activatedRoute: ActivatedRoute) { 
     this.activatedRoute.queryParams.subscribe(params => {
@@ -16,6 +17,7 @@ export class IdentityService {
       if(param) {
         this.jwt= param
         localStorage.setItem('jwt', param);
+        this.loadDataFromJWT(param);
       }
     });
     this.jwt = localStorage.getItem('jwt')!; 
@@ -26,21 +28,25 @@ export class IdentityService {
     this.http.post<any>('https://wedding-backend-neon.vercel.app/decode-jwt', { "token": jwt}).subscribe(data => { 
       if(data) {
         this.names = data.names;
+        this.getNames(data.names);
       } 
     })
   }
 
-  getNames() {
-    if(this.names.length < 2) return this.names[0];
-    let result = "";
-    let i = 1;
+  getNames(names: string[]) {
+    if(names.length < 2) {
+      this.nameToString = names[0];
+    } else {
+      let result = "";
+      let i = 1;
 
-    for (const x of this.names) {
-        if(i == 1) result = x;
-        else if(i == this.names.length) result = result + " si " + x;
-        else  result = result + " , " + x;
-        i++;
+      for (const x of names) {
+          if(i == 1) result = x;
+          else if(i == names.length) result = result + " si " + x;
+          else  result = result + " , " + x;
+          i++;
+      }
+      this.nameToString = result
     }
-    return result;
   }
 }
