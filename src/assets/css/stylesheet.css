@@ -3716,10 +3716,20 @@ input:-internal-autofill-selected {
   border-radius: 4px 0px 0px 4px;
 }
 
+@media (min-width: 767px) {
+  #customback {
+  	background-image: url("../images/us.jpeg");
+    	background-repeat: no-repeat;
+    	background-size: fixed;
+    	background-position: center;
+  }
+}
 
-.show-img {
-	background-image: url("../images/us.jpeg");
-  	background-repeat: no-repeat;
-  	background-size: cover;
-  	background-position: center;
+@media (max-width: 768px) {
+  #customback {
+  background-image: url("../images/us2.jpeg");
+    background-repeat: no-repeat;
+    background-size: fixed;
+    background-position: center;
+}
 }
