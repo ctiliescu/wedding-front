@@ -10,16 +10,21 @@ import { IdentityService } from '../services/identity.service';
 export class HomeComponent implements OnInit {
 
 
-  constructor(private http: HttpClient, private identity: IdentityService) { }
+  cazare: string = '';
+  mesaj: string = '';
+  q: string = 'q';
+  c: string = 'c';
+  f: string = 'f';
 
-  name: string = '';
-  email: string = '';
-  message: string = '';
+  constructor(private http: HttpClient, public identity: IdentityService) { 
+  }
 
   ngOnInit() {
   }
 
   test(): void {
+    alert(this.cazare)
+    alert(this.mesaj)
     // this.http.post<any>('https://weddinglab-go-backend-cristian-iliescu.vercel.app/api/index.go', JSON.stringify({ name: this.name, message: this.message, email: this.email})).subscribe(data => {    
     // })
   }

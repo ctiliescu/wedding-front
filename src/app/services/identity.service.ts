@@ -10,6 +10,7 @@ export class IdentityService {
   jwt: string;
   names: string[] = [];
   nameToString: string = "";
+  email: string = "";
 
   constructor(private http: HttpClient, private activatedRoute: ActivatedRoute) { 
     this.activatedRoute.queryParams.subscribe(params => {
@@ -28,6 +29,7 @@ export class IdentityService {
     this.http.post<any>('https://wedding-backend-neon.vercel.app/decode-jwt', { "token": jwt}).subscribe(data => { 
       if(data) {
         this.names = data.names;
+        this.email = data.email;
         this.getNames(data.names);
       } 
     })

@@ -3,66 +3,71 @@
         <!-- Heading -->
         <div class="row mb-5">
             <div class="col-lg-9 col-xl-8 mx-auto text-center">
-                <h2 class="fw-600 text-white mb-3">Contact Us</h2>
+                <h2 class="fw-600 text-white mb-3">Confirmare</h2>
                 <hr class="heading-separator-line bg-primary opacity-10 mx-auto">
-                <p class="text-4 text-white-50">Send me a note, and let’s get started on your project today!</p>
+                <p class="text-4 text-white-50">Te rugăm să ne comunici decizia ta până la data de 1 Iulie 2023.</p>
             </div>
         </div>
         <!-- Heading End -->
 
         <!-- Contact Form -->
-        <div class="row">
+        <div class="row" style="text-align: center;">
             <div class="col-lg-10 col-xl-9 mx-auto">
                 <form class="form-dark">
                     <div class="row g-4">
                         <div class="col-md-6">
-                            <input name="name" type="text" class="form-control bg-transparent border-2 border-secondary"
-                                required placeholder="Your Name" [(ngModel)]="name">
+                            <div class="row g-4">
+                                <h3 class="text-4 text-white-50">Numar de persoane:</h3>
+                                <div class="col-md-12">
+                                    <input name="nr" type="number" class="form-control bg-transparent border-2 border-secondary" required placeholder="Nume" [(ngModel)]="identity.names.length">
+                                </div>
+                            </div>
                         </div>
                         <div class="col-md-6">
-                            <input name="email" type="email"
-                                class="form-control bg-transparent border-2 border-secondary" required
-                                placeholder="Your Email" [(ngModel)]="email">
+                            <div class="row g-4">
+                                <h3 class="text-4 text-white-50">Nume invitati:</h3>
+                                <div class="col-md-12">
+                                    <input name="names" type="email" class="form-control bg-transparent border-2 border-secondary" required placeholder="Your Email" [(ngModel)]="identity.nameToString">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="row g-4">
+                                <h3 class="text-4 text-white-50">Numar telefon / Email:</h3>
+                                <div class="col-md-12">
+                                    <input name="contact" type="email"
+                                        class="form-control bg-transparent border-2 border-secondary" required
+                                        placeholder="Your Email" [(ngModel)]="identity.email">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="row g-4">
+                                <h3 class="text-4 text-white-50">Cazare:</h3>
+                                <div class="col-md-12">
+                                    <select class="form-control bg-transparent border-2 border-secondary" [(ngModel)]="cazare">
+                                        <option [ngValue]="q" >Doresti cazare?</option>
+                                        <option [ngValue]="c">Da, doresc cazare</option>
+                                        <option [ngValue]="f">Nu, nu doresc cazare</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-12">
+                            <h3 class="text-4 text-white-50">Mesajul dumneavoastra:</h3>
                         </div>
                         <div class="col-md-12">
                             <textarea name="message" class="form-control bg-transparent border-2 border-secondary"
-                                rows="5" required placeholder="Tell us more about your needs........" [(ngModel)]="message"></textarea>
+                                rows="5" required placeholder="Lasa-ne un mesaj" [(ngModel)]="mesaj"></textarea>
                         </div>
-                        <div class="col-md-12 text-center">
-                            <button class="btn btn-primary rounded-pill d-inline-flex" (click)="test()">Send
-                                Message</button>
+                        <div class="col-md-6 text-center">
+                            <button class="btn btn-primary rounded-pill d-inline-flex" (click)="test()">Da, confirm prezenta</button>
+                        </div>
+                        <div class="col-md-6 text-center">
+                            <button class="btn btn-secondary rounded-pill d-inline-flex" (click)="test()">Nu pot sa particip</button>
                         </div>
                     </div>
                 </form>
-            </div>
-        </div>
-        <!-- Contact Form End -->
-
-        <div class="brands-grid separator-border separator-border-light h-100 mt-5">
-            <div class="row">
-                <div class="col-md-6 col-lg-4">
-                    <div class="featured-box text-center my-3 my-md-0">
-                        <div class="featured-box-icon text-muted"> <i class="fas fa-map-marker-alt"></i></div>
-                        <h3 class="text-uppercase text-white">Visit Us</h3>
-                        <p class="text-white-50 mb-0">313 Spaliul Independetei<br>
-                            Bucharest, Romania 060042</p>
-                    </div>
-                </div>
-                <div class="col-md-6 col-lg-4">
-                    <div class="featured-box text-center my-3 my-md-0">
-                        <div class="featured-box-icon text-muted"> <i class="fas fa-phone-alt"></i> </div>
-                        <h3 class="text-uppercase text-white">Call Us Now</h3>
-                        <p class="text-white-50 mb-0">Phone: +40 761 745 557<br>
-                    </div>
-                </div>
-                <div class="col-md-6 col-lg-4">
-                    <div class="featured-box text-center my-3 my-md-0">
-                          <div class="featured-box-icon text-muted"> <i class="fas fa-envelope"></i> </div>
-                        <h3 class="text-uppercase text-white">Inquiries</h3>
-                        <p class="text-white-50 mb-0"><a class="text-white-50"
-                                href="mailto:weddinglab@gmail.com">weddinglab@gmail.com</a><br></p>
-                    </div>
-                </div>
             </div>
         </div>
     </div>
