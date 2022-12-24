@@ -3728,7 +3728,7 @@ input:-internal-autofill-selected {
 
 @media (max-width: 768px) {
   #customback {
-    background-image: url("../images/us2.jpeg");
+    background-image: url("../images/us2.jpg");
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
