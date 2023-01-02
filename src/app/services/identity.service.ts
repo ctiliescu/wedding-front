@@ -10,6 +10,7 @@ export class IdentityService {
   jwt: string;
   names: string[] = [];
   nameToString: string = "";
+  number = 0;
   email: string = "";
 
   constructor(private http: HttpClient, private activatedRoute: ActivatedRoute) { 
@@ -31,6 +32,7 @@ export class IdentityService {
         this.names = data.names;
         this.email = data.email;
         this.getNames(data.names);
+        this.number = this.names.length;
       } 
     })
   }

@@ -5,7 +5,9 @@
             <div class="col-lg-9 col-xl-8 mx-auto text-center">
                 <h2 class="fw-600 text-white mb-3">Confirmare</h2>
                 <hr class="heading-separator-line bg-primary opacity-10 mx-auto">
-                <p class="text-4 text-white-50">Te rugăm să ne comunici decizia ta până la data de 1 Iulie 2023.</p>
+                <p class="text-4 text-white-50" *ngIf="display">Te rugăm să ne comunici decizia ta până la data de 1 Iulie 2023.</p>
+                <p class="text-4 text-white-50" *ngIf="!display">Iti multumim pentru raspunsul trimis.</p>
+                <button class="btn btn-secondary rounded-pill d-inline-flex" (click)="resetValue()">Reactualizare</button>
             </div>
         </div>
         <!-- Heading End -->
@@ -13,13 +15,13 @@
         <!-- Contact Form -->
         <div class="row" style="text-align: center;">
             <div class="col-lg-10 col-xl-9 mx-auto">
-                <form class="form-dark">
+                <form class="form-dark" *ngIf="display">
                     <div class="row g-4">
                         <div class="col-md-6">
                             <div class="row g-4">
                                 <h3 class="text-4 text-white-50">Numar de persoane:</h3>
                                 <div class="col-md-12">
-                                    <input name="nr" type="number" class="form-control bg-transparent border-2 border-secondary" required placeholder="Nume" [(ngModel)]="identity.names.length">
+                                    <input name="nr" type="number" class="form-control bg-transparent border-2 border-secondary" required placeholder="Nume" [(ngModel)]="identity.number">
                                 </div>
                             </div>
                         </div>
@@ -45,11 +47,12 @@
                             <div class="row g-4">
                                 <h3 class="text-4 text-white-50">Cazare:</h3>
                                 <div class="col-md-12">
-                                    <select class="form-control bg-transparent border-2 border-secondary" [(ngModel)]="cazare">
-                                        <option [ngValue]="q" >Doresti cazare?</option>
-                                        <option [ngValue]="c">Da, doresc cazare</option>
-                                        <option [ngValue]="f">Nu, nu doresc cazare</option>
+                                    <select class="form-control bg-transparent border-2 border-secondary" #teams (change)="onSelected(teams.value)">
+                                       <option *ngFor="let o of cities">
+                                          {{o}}
+                                       </option>
                                     </select>
+                                    <p>Selected option: {{ cazare }}</p>
                                 </div>
                             </div>
                         </div>
@@ -61,10 +64,10 @@
                                 rows="5" required placeholder="Lasa-ne un mesaj" [(ngModel)]="mesaj"></textarea>
                         </div>
                         <div class="col-md-6 text-center">
-                            <button class="btn btn-primary rounded-pill d-inline-flex" (click)="test()">Da, confirm prezenta</button>
+                            <button class="btn btn-primary rounded-pill d-inline-flex" (click)="sentEmail(true)">Da, confirm prezenta</button>
                         </div>
                         <div class="col-md-6 text-center">
-                            <button class="btn btn-secondary rounded-pill d-inline-flex" (click)="test()">Nu pot sa particip</button>
+                            <button class="btn btn-secondary rounded-pill d-inline-flex" (click)="sentEmail(false)">Nu pot sa particip</button>
                         </div>
                     </div>
                 </form>

@@ -10,23 +10,47 @@ import { IdentityService } from '../services/identity.service';
 export class HomeComponent implements OnInit {
 
 
+  display: boolean = true;
   cazare: string = '';
   mesaj: string = '';
   q: string = 'q';
   c: string = 'c';
   f: string = 'f';
 
+  cities = ['Doresti cazare?', 'Da, doresc cazare', 'Nu, nu doresc cazare'];
+
   constructor(private http: HttpClient, public identity: IdentityService) { 
+    this.display = !(localStorage.getItem('submited')! === "true");
   }
 
   ngOnInit() {
   }
 
-  test(): void {
-    alert(this.cazare)
-    alert(this.mesaj)
-    // this.http.post<any>('https://weddinglab-go-backend-cristian-iliescu.vercel.app/api/index.go', JSON.stringify({ name: this.name, message: this.message, email: this.email})).subscribe(data => {    
-    // })
+  onSelected(value:string): void {
+    this.cazare = value;
+  }
+
+  resetValue(): void {
+    localStorage.removeItem("submited");
+  }
+
+  sentEmail(vin: boolean): void {
+    if((this.identity.number > 0 || vin ==false) && this.identity.nameToString) {
+      alert(this.cazare)
+      this.http.post<any>('https://wedding-backend-neon.vercel.app/response', 
+        { 
+          "name": this.identity.nameToString,
+          "number": this.identity.number,
+          "raspuns": vin,
+          "contact": this.identity.email,
+          "cazare": this.cazare,
+          "mesaj": this.mesaj}).subscribe(data => { 
+            localStorage.setItem('submited', "true");
+            this.display = false;
+    })
+    } else {
+      alert("Te rugam sa completezi numele si numarul de persoane")
+    }
   }
 
 }
