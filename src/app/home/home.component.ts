@@ -36,7 +36,6 @@ export class HomeComponent implements OnInit {
 
   sentEmail(vin: boolean): void {
     if((this.identity.number > 0 || vin ==false) && this.identity.nameToString) {
-      alert(this.cazare)
       this.http.post<any>('https://wedding-backend-neon.vercel.app/response', 
         { 
           "name": this.identity.nameToString,

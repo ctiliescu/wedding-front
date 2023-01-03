@@ -20,10 +20,11 @@ export class IdentityService {
         this.jwt= param
         localStorage.setItem('jwt', param);
         this.loadDataFromJWT(param);
+      } else {
+        this.jwt = localStorage.getItem('jwt')!; 
+        this.loadDataFromJWT(this.jwt);
       }
     });
-    this.jwt = localStorage.getItem('jwt')!; 
-    this.loadDataFromJWT(this.jwt);
   }
 
   loadDataFromJWT(jwt: String) {
