@@ -7,7 +7,7 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class IdentityService {
 
-  jwt: string;
+  jwt: string = "";
   names: string[] = [];
   nameToString: string = "";
   number = 0;
