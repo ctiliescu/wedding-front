@@ -32,10 +32,12 @@ export class HomeComponent implements OnInit {
 
   resetValue(): void {
     localStorage.removeItem("submited");
+    this.display = true;
   }
 
   sentEmail(vin: boolean): void {
     if((this.identity.number > 0 || vin ==false) && this.identity.nameToString) {
+      this.display = false; 
       this.http.post<any>('https://wedding-backend-neon.vercel.app/response', 
         { 
           "name": this.identity.nameToString,
@@ -45,7 +47,6 @@ export class HomeComponent implements OnInit {
           "cazare": this.cazare,
           "mesaj": this.mesaj}).subscribe(data => { 
             localStorage.setItem('submited', "true");
-            this.display = false;
     })
     } else {
       alert("Te rugam sa completezi numele si numarul de persoane")

@@ -7,7 +7,7 @@
                 <hr class="heading-separator-line bg-primary opacity-10 mx-auto">
                 <p class="text-4 text-white-50" *ngIf="display">Te rugăm să ne comunici decizia ta până la data de 1 Iulie 2023.</p>
                 <p class="text-4 text-white-50" *ngIf="!display">Iti multumim pentru raspunsul trimis.</p>
-                <button class="btn btn-secondary rounded-pill d-inline-flex" (click)="resetValue()">Reactualizare</button>
+                <button class="btn btn-secondary rounded-pill d-inline-flex" (click)="resetValue()" *ngIf="!display">Reactualizare</button>
             </div>
         </div>
         <!-- Heading End -->
