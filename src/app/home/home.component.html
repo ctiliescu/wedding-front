@@ -52,7 +52,6 @@
                                           {{o}}
                                        </option>
                                     </select>
-                                    <p>Selected option: {{ cazare }}</p>
                                 </div>
                             </div>
                         </div>
@@ -61,7 +60,7 @@
                         </div>
                         <div class="col-md-12">
                             <textarea name="message" class="form-control bg-transparent border-2 border-secondary"
-                                rows="5" required placeholder="Lasa-ne un mesaj" [(ngModel)]="mesaj"></textarea>
+                                rows="5" required placeholder="Lasa-ne un mesaj. Te rog sa ne anunti daca doresti meniu vegetarian." [(ngModel)]="mesaj"></textarea>
                         </div>
                         <div class="col-md-6 text-center">
                             <button class="btn btn-primary rounded-pill d-inline-flex" (click)="sentEmail(true)">Da, confirm prezenta</button>

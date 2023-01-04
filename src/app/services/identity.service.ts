@@ -50,8 +50,8 @@ export class IdentityService {
 
       for (const x of names) {
           if(i == 1) result = x;
-          else if(i == names.length) result = result + " si " + x;
-          else  result = result + " , " + x;
+          else if(i == names.length) result = result + " & " + x;
+          else  result = result + ", " + x;
           i++;
       }
       this.nameToString = result
