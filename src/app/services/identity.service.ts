@@ -20,6 +20,9 @@ export class IdentityService {
         this.jwt= param
         localStorage.setItem('jwt', param);
         this.loadDataFromJWT(param);
+        if(localStorage.getItem('jwt')! != param) {
+          localStorage.removeItem("submited");
+        }
       } else {
         this.jwt = localStorage.getItem('jwt')!; 
         this.loadDataFromJWT(this.jwt);
