@@ -17,12 +17,13 @@ export class IdentityService {
     this.activatedRoute.queryParams.subscribe(params => {
       const param = params['jwt'];
       if(param) {
-        this.jwt= param
-        localStorage.setItem('jwt', param);
-        this.loadDataFromJWT(param);
         if(localStorage.getItem('jwt')! != param) {
           localStorage.removeItem("submited");
         }
+
+        this.jwt= param
+        localStorage.setItem('jwt', param);
+        this.loadDataFromJWT(param);
       } else {
         this.jwt = localStorage.getItem('jwt')!; 
         this.loadDataFromJWT(this.jwt);
