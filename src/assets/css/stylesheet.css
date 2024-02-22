@@ -3718,7 +3718,7 @@ input:-internal-autofill-selected {
 
 @media (min-width: 767px) {
   #customback {
-  	background-image: url("../images/us.jpeg");
+  	background-image: url("../images/al.jpeg");
     background-size: cover;
     background-position: center;
 /*  	background-repeat: no-repeat;
@@ -3730,7 +3730,7 @@ input:-internal-autofill-selected {
 
 @media (max-width: 768px) {
   #customback {
-    background-image: url("../images/us2.jpg");
+    background-image: url("../images/al.jpeg");
     background-size: auto !important;
     background-position: center;
 /*    background-repeat: no-repeat;
