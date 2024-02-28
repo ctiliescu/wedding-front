@@ -17,7 +17,7 @@ export class HomeComponent implements OnInit {
   c: string = 'c';
   f: string = 'f';
 
-  cities = ['Doresti cazare?', 'Da, doresc cazare', 'Nu, nu doresc cazare'];
+  cities = ['Dorești cazare?', 'Da, doresc cazare', 'Nu, nu doresc cazare'];
 
   constructor(private http: HttpClient, public identity: IdentityService) { 
     this.display = !(localStorage.getItem('submited')! === "true");

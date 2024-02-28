@@ -6,7 +6,7 @@
                 <h2 class="fw-600 text-white mb-3">Confirmare</h2>
                 <hr class="heading-separator-line bg-primary opacity-10 mx-auto">
                 <p class="text-4 text-white-50" *ngIf="display">Te rugăm să ne comunici decizia ta până la data de 1 Iunie 2024.</p>
-                <p class="text-4 text-white-50" *ngIf="!display">Iti multumim pentru raspunsul trimis.</p>
+                <p class="text-4 text-white-50" *ngIf="!display">Iți multumim pentru raspunsul trimis.</p>
                 <button class="btn btn-secondary rounded-pill d-inline-flex" (click)="resetValue()" *ngIf="!display">Reactualizare</button>
             </div>
         </div>
@@ -19,7 +19,7 @@
                     <div class="row g-4">
                         <div class="col-md-6">
                             <div class="row g-4">
-                                <h3 class="text-4 text-white-50">Numar de persoane:</h3>
+                                <h3 class="text-4 text-white-50">Număr de persoane:</h3>
                                 <div class="col-md-12">
                                     <input name="nr" type="number" class="form-control bg-transparent border-2 border-secondary" required placeholder="Nume" [(ngModel)]="identity.number">
                                 </div>
@@ -27,7 +27,7 @@
                         </div>
                         <div class="col-md-6">
                             <div class="row g-4">
-                                <h3 class="text-4 text-white-50">Nume invitati:</h3>
+                                <h3 class="text-4 text-white-50">Nume invitați:</h3>
                                 <div class="col-md-12">
                                     <input name="names" type="email" class="form-control bg-transparent border-2 border-secondary" required placeholder="Your Email" [(ngModel)]="identity.nameToString">
                                 </div>
@@ -35,7 +35,7 @@
                         </div>
                         <div class="col-md-6">
                             <div class="row g-4">
-                                <h3 class="text-4 text-white-50">Numar telefon / Email:</h3>
+                                <h3 class="text-4 text-white-50">Număr telefon/E-mail:</h3>
                                 <div class="col-md-12">
                                     <input name="contact" type="email"
                                         class="form-control bg-transparent border-2 border-secondary" required
@@ -60,10 +60,10 @@
                         </div>
                         <div class="col-md-12">
                             <textarea name="message" class="form-control bg-transparent border-2 border-secondary"
-                                rows="5" required placeholder="Lasa-ne un mesaj. Te rog sa ne anunti daca doresti meniu vegetarian." [(ngModel)]="mesaj"></textarea>
+                                rows="5" required placeholder="Lasă-ne un mesaj. Te rog să ne anunți dacă dorești un meniu vegetarian." [(ngModel)]="mesaj"></textarea>
                         </div>
                         <div class="col-md-6 text-center">
-                            <button class="btn btn-primary rounded-pill d-inline-flex" (click)="sentEmail(true)">Da, confirm prezenta</button>
+                            <button class="btn btn-primary rounded-pill d-inline-flex" (click)="sentEmail(true)">Da, confirm prezența</button>
                         </div>
                         <div class="col-md-6 text-center">
                             <button class="btn btn-secondary rounded-pill d-inline-flex" (click)="sentEmail(false)">Nu pot sa particip</button>
