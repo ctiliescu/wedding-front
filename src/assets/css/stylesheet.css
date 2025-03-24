@@ -3730,7 +3730,8 @@ input:-internal-autofill-selected {
 
 @media (max-width: 768px) {
   #customback {
-    background-image: url("../images/al2.jpeg")  !important;
+    background-image: url("../images/al2.jpeg") !important;
+    background-size: cover;
     background-position: center;
 /*    background-repeat: no-repeat;
     background-position: center;
