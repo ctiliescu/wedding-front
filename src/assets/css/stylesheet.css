@@ -3725,6 +3725,9 @@ input:-internal-autofill-selected {
   	background-position: center;
     background-size: cover;
     -webkit-background-size: cover; /* safari may need this */
+      -webkit-background-size: cover; /* Ensures proper scaling on iOS */
+        background-position: center center;
+  background-repeat: no-repeat;
   }
 }
 
@@ -3737,5 +3740,8 @@ input:-internal-autofill-selected {
     background-position: center;
     background-size: cover;
     -webkit-background-size: cover; /* safari may need this */
+      -webkit-background-size: cover; /* Ensures proper scaling on iOS */
+        background-position: center center;
+  background-repeat: no-repeat;
 }
 }
