@@ -6,7 +6,7 @@
                 <h2 class="fw-600 text-white mb-3">Confirmare</h2>
                 <hr class="heading-separator-line bg-primary opacity-10 mx-auto">
                 <p class="text-4 text-white-50" *ngIf="display">Vă rugăm să confirmați prezența până la data de 14 mai 2025.</p>
-                <p class="text-4 text-white-50" *ngIf="!display">Iți multumim pentru raspunsul trimis.</p>
+                <p class="text-4 text-white-50" *ngIf="!display">Îți mulțumim pentru răspunsul trimis.</p>
                 <button class="btn btn-secondary rounded-pill d-inline-flex" (click)="resetValue()" *ngIf="!display">Reactualizare</button>
             </div>
         </div>
@@ -43,7 +43,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-md-6">
+<!--                         <div class="col-md-6">
                             <div class="row g-4">
                                 <h3 class="text-4 text-white-50">Cazare:</h3>
                                 <div class="col-md-12">
@@ -54,13 +54,13 @@
                                     </select>
                                 </div>
                             </div>
-                        </div>
+                        </div> -->
                         <div class="col-md-12">
                             <h3 class="text-4 text-white-50">Mesajul dumneavoastra:</h3>
                         </div>
                         <div class="col-md-12">
                             <textarea name="message" class="form-control bg-transparent border-2 border-secondary"
-                                rows="5" required placeholder="Lasă-ne un mesaj. Te rog să ne anunți dacă dorești un meniu vegetarian." [(ngModel)]="mesaj"></textarea>
+                                rows="5" required placeholder="Lasă-ne un mesaj. Te rog să ne anunți dacă dorești un meniu vegetarian sau dacă intenționezi să vii cu copilul." [(ngModel)]="mesaj"></textarea>
                         </div>
                         <div class="col-md-6 text-center">
                             <button class="btn btn-primary rounded-pill d-inline-flex" (click)="sentEmail(true)">Da, confirm prezența</button>

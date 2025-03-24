@@ -44,7 +44,7 @@ export class HomeComponent implements OnInit {
           "number": this.identity.number,
           "raspuns": vin,
           "contact": this.identity.email,
-          "cazare": this.cazare,
+          "cazare": "",
           "mesaj": this.mesaj}).subscribe(data => { 
             localStorage.setItem('submited', "true");
     })
